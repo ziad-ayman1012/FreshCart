@@ -53,26 +53,28 @@ const {
 
   return (
     <>
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg pt-24 pb-12 px-14 ">
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg pt-24 pb-12 px-20 ">
         {allProducts ? (
           <div className="">
-            <div className="flex items-center justify-between">
-              <div className="">
-                <Link to='/payment'>
-                  <button className="bg-green-400 py-3 px-5 text-white my-4 rounded-lg">
-                    <span>Go To Payment</span>
+            <div className="flex items-center justify-between py-5">
+              
+                
+                  <Link to="/payment">
+                    <button className="bg-green-400 py-3 px-5 text-white  rounded-lg">
+                      <span>Go To Payment</span>
+                    </button>
+                  </Link>
+                
+               
+                  <button
+                    onClick={handleClearCart}
+                    className="bg-green-400 py-3 px-5 text-white  rounded-lg"
+                  >
+                    <i className="fa-solid fa-trash-can text-lg pe-2"></i>
+                    <span>Clear Your Cart</span>
                   </button>
-                </Link>
-              </div>
-              <div className="">
-                <button
-                  onClick={handleClearCart}
-                  className="bg-green-400 py-3 px-5 text-white my-4 rounded-lg"
-                >
-                  <i className="fa-solid fa-trash-can text-xl px-2"></i>
-                  <span>Clear Your Cart</span>
-                </button>
-              </div>
+               
+             
             </div>
             <div className="alertMessages">
               <div
@@ -114,7 +116,7 @@ const {
                 </div>
               </div>
             </div>
-            <table className="w-full rounded-lg my-11  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <table className="w-full text-center rounded-lg my-11  text-sm  rtl:text-right text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                   <th scope="col" className="px-16 py-3">
@@ -278,8 +280,7 @@ const {
                 </div>
               </div>
             </div>
-            </div>
-            
+          </div>
         )}
       </div>
     </>

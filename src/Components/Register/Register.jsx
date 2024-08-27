@@ -90,7 +90,7 @@ export default function Register() {
 
   return (
     <>
-      <div className=" py-24 container mx-auto ">
+      <div className=" py-24 container mx-auto px-20">
         {isSuccess ? (
           <div
             className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"

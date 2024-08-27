@@ -22,9 +22,9 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: (
-      <ProtectedRoute>
+     
         <NotFound />
-      </ProtectedRoute>
+     
     ),
   },
   {
@@ -34,17 +34,17 @@ const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <ProtectedRoute>
+          
             <Home />
-          </ProtectedRoute>
+          
         ),
       },
       {
         path: "home",
         element: (
-          <ProtectedRoute>
+          
             <Home />
-          </ProtectedRoute>
+          
         ),
       },
       {
@@ -69,33 +69,33 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: (
-          <ProtectedRoute>
+          
             <Products />
-          </ProtectedRoute>
+         
         ),
       },
       {
         path: "productDetails/:id",
         element: (
-          <ProtectedRoute>
+          
             <ProductDetails />
-          </ProtectedRoute>
+         
         ),
       },
       {
         path: "brands",
         element: (
-          <ProtectedRoute>
+         
             <Brands />
-          </ProtectedRoute>
+          
         ),
       },
       {
         path: "categories",
         element: (
-          <ProtectedRoute>
+         
             <Categories />
-          </ProtectedRoute>
+          
         ),
       },
     ],

@@ -61,7 +61,7 @@ export default function Login() {
 
   return (
     <>
-      <div className=" py-48 container mx-auto ">
+      <div className=" py-48 container mx-auto  px-20">
         {isSuccess ? (
           <div
             className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
@@ -174,7 +174,7 @@ export default function Login() {
         </form>
 
         <Link to="/forgetPass" className="flex items-center justify-center">
-          <p className="text-lg text-emerald-500 hover:underline py-20 ">
+          <p className=" text-emerald-500 hover:underline py-20 ">
             Forget Password
           </p>
         </Link>

@@ -37,7 +37,7 @@ export default function ForgetPass() {
     
   return (
     <>
-      <div className=" py-48 container mx-auto ">
+      <div className=" py-48 container mx-auto px-20">
         <h3 className="text-3xl font-semibold text-emerald-400 text-center pb-6">
           Enter Your Email:
         </h3>

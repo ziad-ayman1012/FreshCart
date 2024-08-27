@@ -43,8 +43,8 @@ export default function Brands() {
     </>;
   }
   return <>
-    <div className="container mx-auto">
-      <div className="grid grid-cols-4 py-5 gap-4">
+    <div className="container mx-auto px-20">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 py-10 gap-4">
        {data.data.data.map((brand)=>{return (
          <div key={brand._id} className="brand rounded-lg bg-blue-200 text-center">
            <img src={brand.image} className="w-full" alt={brand.name} />

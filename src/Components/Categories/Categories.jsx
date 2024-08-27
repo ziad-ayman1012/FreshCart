@@ -38,16 +38,18 @@ export default function Categories() {
   }
   return (
     <>
-      <div className="container mx-auto">
-        <div className="grid grid-cols-4 py-20 gap-4 px-20">
+      <div className="container mx-auto px-20">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 py-20 gap-4">
           {data.data.data.map((brand) => {
             return (
               <div
                 key={brand._id}
-                className="brand rounded-lg bg-blue-200 text-center"
+                className="brand rounded-lg md:block text-center relative group overflow-hidden"
               >
-                <img src={brand.image} className="w-full" alt={brand.name} />
-                <h2>{brand.name}</h2>
+                <img src={brand.image} className="w-96 h-80 " alt={brand.name} />
+                <div className="layer flex items-center justify-center text-lg bg-blue-200 absolute top-0 left-0 right-0 bottom-0 translate-y-[200%] group-hover:translate-y-0 transition-all">
+                  <h2>{brand.name}</h2>
+                </div>
               </div>
             );
           })}

@@ -7,11 +7,20 @@ import { Link } from "react-router-dom";
 import { cartContext } from "../../Context/CartContext";
 import toast from "react-hot-toast";
 import { wishContext } from "../WishListContext/WishListContext";
+import { authContext } from "../../Context/AuthContext";
 
 export default function Products() {
   const { addProductToCart } = useContext(cartContext);
+  const { token } = useContext(authContext);
   const { addToWishList, wishlistStatus, removeFromWishList } =
     useContext(wishContext);
+  
+
+  
+  function authUser() {
+    toast.error('You Must Have An Account')
+  }
+  
 
   
 
@@ -85,7 +94,7 @@ export default function Products() {
   }
 
   return (
-    <div className="container mx-auto py-10 mt-20 px-10">
+    <div className="container mx-auto py-10 mt-20 px-20">
       <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
         {data.data.data.map((product) => {
           const isAdded = wishlistStatus[product._id] || false;
@@ -101,7 +110,9 @@ export default function Products() {
                   <i className="fas fa-heart text-xl cursor-pointer"></i>
                 </div>
                 <div
-                  onClick={() => handleAddingProduct(product._id)}
+                  onClick={
+                    token ? () => handleAddingProduct(product._id) : authUser
+                  }
                   className="group-hover:translate-x-0 transition-all absolute cursor-pointer translate-x-[200%] top-2 end-2 rounded-lg py-2 px-3 bg-[#bcf06d]"
                 >
                   <i className="fas fa-plus text-white"></i>

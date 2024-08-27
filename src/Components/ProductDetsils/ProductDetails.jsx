@@ -6,6 +6,7 @@ import {  useParams } from "react-router-dom";
 import { cartContext } from "../../Context/CartContext";
 import toast from "react-hot-toast";
 import { wishContext } from "../WishListContext/WishListContext";
+import { authContext } from "../../Context/AuthContext";
 
 export default function ProductDetails() {
   const { addToWishList, wishlistStatus, removeFromWishList } =
@@ -13,6 +14,7 @@ export default function ProductDetails() {
   
   const { id } = useParams()
   const { addProductToCart } = useContext(cartContext);
+  const {token}= useContext(authContext)
 
   function handleWishlistToggle(id) {
     if (wishlistStatus[id]) {
@@ -61,7 +63,11 @@ export default function ProductDetails() {
         duration: 2000,
       });
       }
-    }
+  }
+  
+  function authUser() {
+    toast.error("You Must Have An Account");
+  }
 
     function getProductDetails() {
         return axios.get(
@@ -106,7 +112,7 @@ export default function ProductDetails() {
     
   return (
     <>
-      <div className="container mx-auto py-28 flex items-center justify-between px-10 gap-5">
+      <div className="container mx-auto py-28 flex items-center justify-between px-20 gap-5">
         <div className="w-1/4">
           <img
             src={itemDetails.imageCover}
@@ -138,7 +144,7 @@ export default function ProductDetails() {
             <i className="fas fa-heart text-xl cursor-pointer"></i>
           </div>
           <button
-            onClick={handleAddingToCart}
+            onClick={token ? handleAddingToCart:authUser }
             className="bg-green-400 rounded-lg w-full py-3 text-white"
           >
             + Add To Cart
